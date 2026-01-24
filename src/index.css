@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+:root,
+body {
+  height: 100%;
+}
+
+:root {
+  --font-sans: "Rubik", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+body {
+  overflow: hidden;
+}
+
+#root {
+  min-height: 100%;
+}
+
+@theme {
+  --color-dark-900: #f9fafb; /* page background */
+  --color-dark-800: #f3f4f6; /* surface 1 */
+  --color-dark-700: #d1d5db; /* surface 2 with more contrast */
+
+  --color-brand-green: #2ecc71;
+  --color-brand-greenHover: #27ae60;
+
+  --color-light-100: #111827; /* primary text */
+  --color-light-400: #4b5563; /* secondary text */
+
+  --font-inter: "Rubik", sans-serif;
+}
