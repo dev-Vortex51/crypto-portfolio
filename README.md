@@ -88,7 +88,7 @@ Modern React + TypeScript app for portfolio viewing and a live CoinGecko-powered
 - Tables are horizontally scrollable on small screens; non-critical columns hide on narrow breakpoints.
 - Sticky first column and header backgrounds kept in sync to prevent visual seams.
 
-### What we would improve with more time
+### What I would improve with more time
 
 1. Real auth + persisted portfolios (CRUD, multiple wallets) with a backend proxy for CoinGecko.
 2. Comprehensive test suite (unit + integration) and CI.
