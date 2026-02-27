@@ -24,6 +24,7 @@ export const PortfolioPage = () => {
       <header className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 lg:gap-0">
         <div className="w-full lg:w-auto">
           <div className="flex flex-wrap items-center gap-3 mb-2">
+            <h1 className="sr-only">Portfolio Dashboard</h1>
             <span className="text-light-400 text-sm font-medium tracking-wide">
               Current Balance
             </span>
@@ -81,18 +82,18 @@ export const PortfolioPage = () => {
         <div className="flex gap-3 w-full lg:w-auto">
           <button
             type="button"
-            aria-disabled
-            title="Analytics coming soon"
-            className="flex-1 lg:flex-none flex items-center justify-center gap-2 px-4 py-3 sm:py-2.5 bg-dark-800 text-light-400 rounded-full font-medium border border-dark-700 cursor-not-allowed opacity-70"
+            disabled
+            aria-label="View analytics - Coming soon"
+            className="flex-1 lg:flex-none flex items-center justify-center gap-2 px-4 py-3 sm:py-2.5 bg-dark-800 text-light-400 rounded-full font-medium border border-dark-700 disabled:opacity-70 disabled:cursor-not-allowed transition-all duration-200 hover:enabled:bg-dark-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-green"
           >
             <LineChart size={18} className="text-light-400" />
             <span>Analytics</span>
           </button>
           <button
             type="button"
-            aria-disabled
-            title="Add Asset coming soon"
-            className="flex-1 lg:flex-none flex items-center justify-center gap-2 px-4 py-3 sm:py-2.5 bg-brand-green text-white rounded-full font-medium opacity-70 cursor-not-allowed"
+            disabled
+            aria-label="Add asset to portfolio - Coming soon"
+            className="flex-1 lg:flex-none flex items-center justify-center gap-2 px-4 py-3 sm:py-2.5 bg-brand-green text-white rounded-full font-medium disabled:opacity-70 disabled:cursor-not-allowed transition-all duration-200 hover:enabled:bg-brand-green-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-green"
           >
             <PlusCircle size={18} />
             <span>Add Asset</span>

@@ -1,0 +1,276 @@
+/**
+ * Advanced Animations and Micro-Interactions
+ * Provides smooth, accessible animations for enhanced user experience
+ */
+
+/* ============================================================================
+   BUTTON ANIMATIONS
+   ============================================================================ */
+
+@keyframes buttonHover {
+  to {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
+  }
+}
+
+@keyframes buttonActive {
+  to {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(46, 204, 113, 0.2);
+  }
+}
+
+.btn-hover {
+  animation: buttonHover 200ms ease-out forwards;
+}
+
+.btn-active {
+  animation: buttonActive 100ms ease-out forwards;
+}
+
+/* ============================================================================
+   CARD AND CONTAINER ANIMATIONS
+   ============================================================================ */
+
+@keyframes cardHover {
+  to {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1200px 0;
+  }
+  100% {
+    background-position: 1200px 0;
+  }
+}
+
+.shimmer-loading {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 20%,
+    rgba(255, 255, 255, 0) 40%
+  );
+  background-size: 1200px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* ============================================================================
+   TEXT AND CONTENT ANIMATIONS
+   ============================================================================ */
+
+@keyframes textGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 10px rgba(46, 204, 113, 0);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(46, 204, 113, 0.5);
+  }
+}
+
+@keyframes countUp {
+  from {
+    opacity: 0.7;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================================================
+   TABLE AND LIST ANIMATIONS
+   ============================================================================ */
+
+@keyframes rowHover {
+  to {
+    background-color: rgba(46, 204, 113, 0.05);
+  }
+}
+
+@keyframes rowEntry {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.table-row-enter {
+  animation: rowEntry 300ms ease-out;
+}
+
+/* ============================================================================
+   MODAL AND OVERLAY ANIMATIONS
+   ============================================================================ */
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes overlayFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  animation: modalSlideIn 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.modal-overlay {
+  animation: overlayFadeIn 200ms ease-out;
+}
+
+/* ============================================================================
+   SCROLL AND LOAD ANIMATIONS
+   ============================================================================ */
+
+@keyframes staggerChildren {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stagger-item {
+  animation: staggerChildren 400ms ease-out backwards;
+}
+
+.stagger-item:nth-child(1) {
+  animation-delay: 0ms;
+}
+
+.stagger-item:nth-child(2) {
+  animation-delay: 50ms;
+}
+
+.stagger-item:nth-child(3) {
+  animation-delay: 100ms;
+}
+
+.stagger-item:nth-child(4) {
+  animation-delay: 150ms;
+}
+
+.stagger-item:nth-child(5) {
+  animation-delay: 200ms;
+}
+
+/* ============================================================================
+   ICON ANIMATIONS
+   ============================================================================ */
+
+@keyframes iconSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes iconBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.icon-spin {
+  animation: iconSpin 1s linear infinite;
+}
+
+.icon-bounce {
+  animation: iconBounce 600ms ease-in-out infinite;
+}
+
+/* ============================================================================
+   TRANSITION UTILITIES
+   ============================================================================ */
+
+.transition-fast {
+  transition: all 150ms ease-in-out;
+}
+
+.transition-base {
+  transition: all 200ms ease-in-out;
+}
+
+.transition-slow {
+  transition: all 300ms ease-in-out;
+}
+
+.transition-slower {
+  transition: all 500ms ease-in-out;
+}
+
+/* Smooth color transitions */
+.transition-colors-smooth {
+  transition: background-color 200ms ease-in-out, color 200ms ease-in-out,
+    border-color 200ms ease-in-out;
+}
+
+/* Smooth transform transitions */
+.transition-transform-smooth {
+  transition: transform 200ms ease-in-out;
+}
+
+/* ============================================================================
+   FOCUS ANIMATIONS
+   ============================================================================ */
+
+@keyframes focusPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(46, 204, 113, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(46, 204, 113, 0);
+  }
+}
+
+.focus-pulse {
+  animation: focusPulse 1.5s infinite;
+}
+
+/* ============================================================================
+   ACCESSIBILITY - REDUCED MOTION
+   ============================================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
