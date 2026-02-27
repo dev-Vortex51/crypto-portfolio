@@ -11,7 +11,9 @@ export const DashboardLayout = ({ children }: { children: ReactNode }) => {
       {/* Mobile Menu Button */}
       <button
         onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-        className="md:hidden fixed top-4 right-4 z-50 p-2 bg-dark-800 border border-dark-700 rounded-lg text-light-100 hover:bg-dark-700 transition-colors"
+        aria-label={isSidebarOpen ? "Close navigation menu" : "Open navigation menu"}
+        aria-expanded={isSidebarOpen}
+        className="md:hidden fixed top-4 right-4 z-50 p-2 bg-dark-800 border border-dark-700 rounded-lg text-light-100 hover:bg-dark-700 transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-green"
       >
         {isSidebarOpen ? <X size={20} /> : <Menu size={20} />}
       </button>
@@ -21,6 +23,8 @@ export const DashboardLayout = ({ children }: { children: ReactNode }) => {
         <div
           onClick={() => setIsSidebarOpen(false)}
           className="md:hidden fixed inset-0 bg-black/50 z-30"
+          aria-hidden="true"
+          role="presentation"
         />
       )}
 
@@ -29,11 +33,18 @@ export const DashboardLayout = ({ children }: { children: ReactNode }) => {
         className={`fixed md:static inset-y-0 left-0 z-40 transform transition-transform duration-300 md:transform-none ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         } md:translate-x-0`}
+        aria-hidden={!isSidebarOpen && typeof window !== "undefined" && window.innerWidth < 768}
       >
         <Sidebar onNavigate={() => setIsSidebarOpen(false)} />
       </div>
 
-      <main className="flex-1 overflow-y-auto min-h-0">{children}</main>
+      <main 
+        className="flex-1 overflow-y-auto min-h-0"
+        role="main"
+        aria-label="Main content"
+      >
+        {children}
+      </main>
     </div>
   );
 };

@@ -19,9 +19,9 @@ const data = [
 
 export const PortfolioChart = () => {
   return (
-    <div className="w-full h-80 bg-dark-800 rounded-2xl border border-dark-700 p-6 mb-8 relative">
+    <div className="w-full h-80 bg-dark-800 rounded-2xl border border-dark-700 p-6 mb-8 relative shadow-base transition-shadow duration-200 hover:shadow-md">
       {/* Overlay Tooltip from Design */}
-      <div className="absolute top-6 left-6 z-10">
+      <div className="absolute top-6 left-6 z-10 animate-in fade-in duration-300">
         <div className="text-xs text-light-400 font-medium uppercase tracking-wider">
           Total Portfolio
         </div>

@@ -7,9 +7,10 @@ export const AssetTableRow = ({ asset }: { asset: AssetRowData }) => {
   return (
     <tr
       className={clsx(
-        "group hover:bg-dark-700/50 transition-colors",
-        asset.isStale && "opacity-60",
+        "group hover:bg-dark-700/50 transition-all duration-200",
+        asset.isStale && "opacity-60 pointer-events-none",
       )}
+      role="row"
     >
       {/* Identity */}
       <td className="px-3 sm:px-6 py-4">
@@ -91,8 +92,11 @@ export const AssetTableRow = ({ asset }: { asset: AssetRowData }) => {
       </td>
 
       <td className="px-3 sm:px-6 py-4 hidden md:table-cell">
-        <button className="p-2 hover:bg-dark-900 rounded-lg text-light-400 hover:text-light-100">
-          <MoreHorizontal size={16} />
+        <button 
+          className="p-2 hover:bg-dark-900 rounded-lg text-light-400 hover:text-light-100 transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-green"
+          aria-label={`Actions for ${asset.name}`}
+        >
+          <MoreHorizontal size={16} aria-hidden="true" />
         </button>
       </td>
     </tr>
